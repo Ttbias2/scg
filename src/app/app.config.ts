@@ -7,13 +7,14 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { provideClientHydration } from '@angular/platform-browser';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideClientHydration(),importProvidersFrom([
+  providers: [provideRouter(routes), provideClientHydration(),{provide:LocationStrategy,useClass: HashLocationStrategy},importProvidersFrom([
     TranslateModule.forRoot({
         loader: {
             provide: TranslateLoader,
