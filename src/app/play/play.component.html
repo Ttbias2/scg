@@ -1,0 +1,61 @@
+<div id="contenedor">
+    
+    <button id="back" routerLink="/menu">&larr;</button>
+
+    <div class="deck" id="pc">
+        @for (card of deckPc; track $index) {
+        <div class="card" id="pcCard"></div>
+        }
+    </div>
+
+
+    <div id="center">
+
+        <p class="points">{{'playerPoints'|translate}}: {{pointsPlayer}}</p>
+
+
+        <div class="card" id="playerHero">
+            <p>{{playerHero.name}}</p>
+            <img src="{{playerHero.image.url}}" alt="">
+            <div id="playerStat"></div>
+        </div>
+
+        <div class="card">
+            <div class="card" id="deal"></div>
+        </div>
+        
+        <div class="card" id="pcHero">
+            <p>{{pcHero.name}}</p>
+            <img src="{{pcHero.image.url}}" alt="">
+            <div id="pcStat"></div>
+        </div>
+        <p class="points">{{'rivalPoints'|translate}}: {{pointsPc}}</p>
+    </div>
+    
+
+    <div class="deck" id="player">
+        @for (card of deckPLayer; track $index) {
+        <div class="card" id="playerCard">
+            <p>{{card.name}}</p>
+            <img src={{card.image.url}} alt="">
+            <div id="stats">
+                <div class="stat">
+                    <button style="background-color:red;" (click)="turn($index,1)">{{card.powerstats.strength}}</button>
+                    <p>{{'str'|translate}}</p>
+                </div>
+                <div class="stat">
+                    <button style="background-color:aqua;" (click)="turn($index,2)">{{card.powerstats.intelligence}}</button>
+                    <p>{{'int'|translate}}</p>
+                </div>
+                <div class="stat">
+                    <button style="background-color:burlywood;" (click)="turn($index,3)">{{card.powerstats.speed}}</button>
+                    <p>{{'spd'|translate}}</p>
+                </div>
+
+            </div>
+        </div>
+        }
+
+    </div>
+
+</div>

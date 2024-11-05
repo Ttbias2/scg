@@ -1,0 +1,34 @@
+<div id="contenedor">
+    <button routerLink="/menu" id="back">&larr;</button>
+    <nav>
+        <div id="sups">
+            <button (click)="pp()">&larr;</button>
+            <button (click)="np()">&rarr;</button>
+        </div>
+    </nav>
+    @for (super of supers; track super.id) {
+    <div id="super">
+        <div id="presentation">
+            <img src="{{super.image.url}}" alt="{{'errimg'|translate}}">
+            <p>{{super.name}}</p>
+        </div>
+        <div id="info">
+            @if(super.biography['full-name']==""){
+                <p>{{"Name" | translate}}: {{super.name}}</p>
+            }
+            @else {
+                <p>{{"Name" | translate}}: {{super.biography['full-name']}}</p>
+            }
+            <p>{{"str" | translate}}: {{super.powerstats.strength}}</p>
+            <p>{{"spd" | translate}}: {{super.powerstats.speed}}</p>
+            <p>{{"int" | translate}}: {{super.powerstats.intelligence}}</p>
+            <p>{{"gender" | translate}}: {{super.appearance.gender}}</p>
+            <p>{{"race" | translate}}: {{super.appearance.race}}</p>
+            <p>{{"weight" | translate}}: {{super.appearance.weight.join(" / ")}}</p>
+            <p>{{"height" | translate}}: {{super.appearance.height.join(" / ")}}</p>
+
+        </div>
+    </div>
+    }
+
+</div>

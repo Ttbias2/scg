@@ -1,0 +1,155 @@
+#contenedor {
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.deck {
+    display: flex;
+    margin-block: 1rem;
+    opacity: 0;
+}
+
+
+.card {
+    width: 9rem;
+    height: 15rem;
+    background-color: rgb(236, 124, 44);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-inline: .5rem;
+    transition: all 0.4s;
+    background-image: url("../../assets/imgs/png-transparent-bright-orange-yellow-comic-style-halftone-background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#playerCard{
+    background-image: none;
+}
+
+#playerCard:hover {
+
+    transform: scale(1.2) translateY(-3rem);
+    box-shadow: 0 0 10px 3px rgba(255, 69, 0, 0.6), 0 0 20px 5px rgba(255, 69, 0, 0.4);
+}
+
+#stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat {
+    text-align: center;
+}
+
+button {
+    width: 3rem;
+    height: 1.5rem;
+}
+
+img {
+    width: 7rem;
+    height: 10rem;
+}
+
+#center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#playerHero {
+    background-image: none;
+    opacity: 0;
+}
+
+#pcHero {
+    background-image: none;
+    opacity: 0;
+}
+
+#player{
+    animation: showPlayer 2s forwards;
+    animation-delay: 1.8s;
+}
+
+#pc{
+    animation: showPc 2s forwards;
+    animation-delay: 1.8s;
+}
+
+
+#deal {
+    animation: deal .2s ease-in-out infinite;
+    animation-iteration-count: 9;
+}
+
+.points{
+    font-size: 3rem;
+    margin-inline: 1rem;
+}
+
+@keyframes showPlayer {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    1% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes showPc {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    1% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes deal {
+    0% {
+        transform: rotate(0deg) translateY(0);
+        opacity: 1;
+    }
+
+    25% {
+        transform: translateY(-300%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(300%);
+        opacity: 1;
+    }
+}
+
+@keyframes changeOpacity {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100%{opacity: 1;}
+}
+
+.opacity-animation {
+    animation: changeOpacity 1s ease-in-out forwards;
+}

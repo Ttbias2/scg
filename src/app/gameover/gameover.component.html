@@ -1,0 +1,22 @@
+<div id="contenedor">
+    <div id="page">
+
+        <div class="vignette">
+            @if(ganador==0){
+            <p>{{'playerVictory'|translate}}</p>
+            }
+            @else if (ganador==1) {
+            <p>{{'rivalVictory'|translate}}</p>
+            }
+            @else {
+            <P>{{'draw'|translate}}</P>
+            }
+        </div>
+
+        <div class="row">
+            <button class="vignette" routerLink="/play"> {{'again'|translate}} </button>
+            <button class="vignette" routerLink="/menu"> Menu </button>
+        </div>
+
+    </div>
+</div>
