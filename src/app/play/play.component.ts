@@ -175,7 +175,7 @@ export class PlayComponent implements OnInit {
 
   turn(indexCart: number, stat: number) {
 
-    const rivalCart: number = Math.floor(Math.random() * (this.deckPc.length - 0)) + 0;
+    const rivalCart: number = Math.floor(Math.random() * (this.deckPc.length - 0)) + 1;
     const rivalStat: number = Math.floor(Math.random() * (3 - 0)) + 1;
 
     this.pcHero = this.deckPc[rivalCart];
